@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Button, Image, Alert } from 'react-native';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons'; 
 
 
@@ -93,17 +92,7 @@ const Signup = () => {
             />
           </View>
 
-          {/* <View style={styles.inputContainer}>
-            <Icon name="lock" size={30} color="#000" style={styles.icon} />
-            <TextInput
-              style={styles.input}
-              placeholder="Choose Password"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              placeholderTextColor={'gray'}
-            />
-          </View> */}
+        
 
 <View style={styles.inputContainer}>
             <Icon name="lock" size={30} color="#000" style={styles.icon} />
@@ -138,9 +127,7 @@ const Signup = () => {
           
           <View style={styles.loginContainer}>
              <Text style={styles.loginText}>Or </Text>
-            {/* <TouchableOpacity onPress={() => console.log('Navigate to login screen')}>
-              <Text style={[styles.loginText, { color: '#4285F4' }]}>Login</Text>
-            </TouchableOpacity> */}
+            
           </View>
 
           <View style={styles.screenContainer}>
