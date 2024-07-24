@@ -60,7 +60,9 @@ function handleSubmit(){
   };
   if(nameVerify && emailVerify && passwordVerify)
   {
-    axios.post("http://192.168.144.135:5001/register",userData)
+    // axios.post("http://192.168.144.135:5001/register",userData)
+    axios.post("http://192.168.199.135:5001/register",userData)
+
     .then(res=>{
       console.log(res.data);
       if(res.data.status == "ok")
@@ -75,9 +77,9 @@ function handleSubmit(){
       else
       {
         Alert.alert(JSON.stringify(res.data));
-        setName('');
-        setEmail('');
-        setPassword('');
+        // setName('');
+        // setEmail('');
+        // setPassword('');
       }
     })
   .catch(e=>console.log(e));
