@@ -209,6 +209,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // import Signup from './android/app/src/component/Signup';
 import Signup from './android/app/src/components/SignupScreen';
+// import Signup from './android/app/src/components/Signup.js'
 // import Login from './android/app/src/component/Login';
 import Login from './android/app/src/components/LoginScreen';
 // import Dashboard from './android/app/src/component/Dashboard';

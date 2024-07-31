@@ -5,13 +5,15 @@ import Screen1 from './Screen1';
 import Screen2 from './Screen2';
 import Screen3 from './Screen3';
 import Dashboard from './Dashboard';
-// import {  } from 'react-native-reanimated/lib/typescript/Animated';
+import Dash from './Dash'
+// import {  } from 'react-native-rea;nimated/lib/typescript/Animated';
 const Bottom = createBottomTabNavigator();
+import Subscription from './Subscription';
 
 const Bootom = () => {
   return (
     <Bottom.Navigator>
-      <Bottom.Screen name="Home" component={Dashboard} options={{headerShown:false,tabBarIcon:()=>{
+      <Bottom.Screen name="Home" component={Dash} options={{headerShown:false,tabBarIcon:()=>{
         return(
           <Image source={require("../images/home.png")} style={{width:20,height:20}}/>
         )

@@ -1,10 +1,9 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import axios from 'axios';
 import Zocial from "react-native-vector-icons/Zocial";
-import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 
@@ -16,6 +15,22 @@ const Personal = ({ navigation }) => {
     newPassword: '',
     confirmPassword: '',
   });
+
+  useEffect(() => {
+    axios.get("http://192.168.199.135:5001/userProfile")
+      .then(response => {
+        const { name, email } = response.data;
+        setForm(prevForm => ({
+          ...prevForm,
+          name,
+          email,
+        }));
+      })
+      .catch(error => {
+        console.log(error);
+        Alert.alert("Error fetching user data", error.message);
+      });
+  }, []);
 
   const handleUpdateProfile = () => {
     const { name, email, currentPassword, newPassword, confirmPassword } = form;
@@ -158,158 +173,126 @@ const Personal = ({ navigation }) => {
 export default Personal;
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:'rgb(102, 153, 255)',
+  container: {
+    backgroundColor: 'rgb(102, 153, 255)',
+    flex: 1,
   },
   header: {
-    // marginVertical:30,  
-    // marginTop:1,  
-      
-      borderBottomLeftRadius: 5,  
-      borderBottomRightRadius:5,
-      marginTop: -90,              
-      paddingTop: 90, 
-     
-},
-headerImage:{
-  width: 70,
-  height: 70,
-  alignSelf:"center",
-  marginBottom:30,
-  marginTop:-135,
-},
-headerImage1:{
-  width: 20,
-  height: 20,
-  alignSelf:"center",
-  marginBottom:30,
-  marginTop:30,
-  marginLeft:5,
-  marginRight:-1,
-
-},
-// headerImage2:{
-//   width: 10,
-//   height: 10,
-//   alignSelf:"left",
-//   marginBottom:30,
-//   marginTop:30,
-//   marginLeft:10,
-//   marginRight:10,
-// },
-headerImage3:{
-  width: 10,
-  height: 10,
-  alignSelf:"center",
-  marginBottom:30,
-  marginTop:30,
-  marginLeft:18,
-  marginRight:15,
-},
-form:{
- 
-   marginBottom:20,
-   backgroundColor:"white",
-   padding:8,
-  borderTopLeftRadius:50,
-  borderTopRightRadius:50,
-   marginTop: 40,              
-   paddingTop: 100, 
-
-  
-},
-
-inputboxcointainer:{
-  alignItems:"center",
-  flexDirection:"row",
-  fontWeight:'350',
-  borderRadius:10,
-  fontSize:10,
-  marginBottom:1,
-  borderWidth: 0.5,
-  borderColor: '#696969',
-  padding: 1,
- margin:5,
- height:28,
- width:230,
- marginLeft:13,
-
-
-  
-},
-inputlabel:{
-  fontSize:15,
-  fontWeight:"900",
-  color:"black",
-  marginBottom:10,
-  textAlign:"center",
-   marginTop:-75,
-padding:10,
-},
-footer2:{
-  height: 1, 
-  backgroundColor: '#808080',
-  flexDirection: 'row', 
-  alignItems: 'center',
-  margin:4,
-  
-},
-botton1:{
-  backgroundColor:'rgb(102, 153, 255)',
-  borderRadius:8,
-  borderWidth:1,
-  borderColor:"blue",
-  alignItems:"center",
-  justifyContent:"center",
-  paddingVertical:5,
-  paddingHorizontal:5,
-  flexDirection:'row',
-  marginTop:10,
- height:25,
- width:200,
-marginLeft:30,
-},
-botton1Text:{
-  fontSize:15,
-  fontWeight:"500",
-  color:"black",
-  height:20,
-  width:50,
-  marginTop:-3,
-    },
-    inputControl:{
-      marginHorizontal:9, 
-      height:40,   
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    marginTop: -90,
+    paddingTop: 90,
   },
-  textchange:{
-    fontSize:13,
-    fontWeight:"400",
-    color:"black",
-   marginLeft:70,
+  headerImage: {
+    width: 70,
+    height: 70,
+    alignSelf: "center",
+    marginBottom: 30,
+    marginTop: -135,
   },
-  lock:{
-    marginLeft:7,
+  headerImage1: {
+    width: 20,
+    height: 20,
+    alignSelf: "center",
+    marginBottom: 30,
+    marginTop: 30,
+    marginLeft: 5,
+    marginRight: -1,
   },
-  eye:{
-   marginLeft:43,
+  form: {
+    marginBottom: 20,
+    backgroundColor: "white",
+    padding: 8,
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    marginTop: 40,
+    paddingTop: 100,
   },
-  eye1:{
-    marginLeft:60,
+  inputboxcointainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    fontWeight: '350',
+    borderRadius: 10,
+    fontSize: 10,
+    marginBottom: 1,
+    borderWidth: 0.5,
+    borderColor: '#696969',
+    padding: 1,
+    margin: 5,
+    height: 28,
+    width: 230,
+    marginLeft: 13,
   },
-  Title:{
-    fontSize:15,
-    fontWeight:"700",
-    marginLeft:95,
-    marginTop:-50,
-    color:"black",
+  inputlabel: {
+    fontSize: 15,
+    fontWeight: "900",
+    color: "black",
+    marginBottom: 10,
+    textAlign: "center",
+    marginTop: -75,
+    padding: 10,
   },
-  headerImage4:{
-    width: 15,
-    height: 15,
-    alignSelf:"left",
-    marginBottom:30,
-    marginTop:20,
-    marginLeft:8,
-   
+  footer2: {
+    height: 1,
+    backgroundColor: '#808080',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 4,
   },
-})
+  botton1: {
+    backgroundColor: 'rgb(102, 153, 255)',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "blue",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    flexDirection: 'row',
+    marginTop: 10,
+    height: 25,
+    width: 200,
+    marginLeft: 30,
+  },
+  botton1Text: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: "black",
+    height: 20,
+    width: 50,
+    marginTop: -3,
+  },
+  inputControl: {
+    marginHorizontal: 9,
+    height: 40,
+  },
+  textchange: {
+    fontSize: 13,
+    fontWeight: "400",
+    color: "black",
+    marginLeft: 70,
+  },
+  lock: {
+    marginLeft: 7,
+  },
+  eye: {
+    marginLeft: 43,
+  },
+  eye1: {
+    marginLeft: 60,
+  },
+  Title: {
+    fontSize: 15,
+    fontWeight: "700",
+    marginLeft: 95,
+    marginTop: -50,
+    color: "black",
+  },
+  headerImage4: {
+    width: 10,
+    height: 10,
+    alignSelf: "center",
+    marginTop: 60,
+    marginLeft: 20,
+  },
+});

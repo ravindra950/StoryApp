@@ -383,7 +383,9 @@ export default function Login({ navigation }) {
         
         const userData = { email, password };
 
-        axios.post("http://192.168.199.135:5001/login-user", userData)
+        // axios.post("http://192.168.199.135:5001/login-user", userData)
+        axios.post("http://192.168.115.135:5001/login-user", userData)
+
             .then(res => {
                 if (res.data.status === "ok") {
                     Alert.alert('Login Successful!');
@@ -391,7 +393,7 @@ export default function Login({ navigation }) {
                     setEmail('');
                     setPassword('');
                 } else {
-                    Alert.alert('Error', 'Incorrect email or password.');
+                    Alert.alert('Incorrect email or password.');
                 }
             })
             .catch(e=>console.log(e));

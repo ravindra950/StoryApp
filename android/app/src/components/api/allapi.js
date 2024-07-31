@@ -1,7 +1,7 @@
 
 const stories = [
     { 
-        id: 1, title: 'The Brave Tiger ', link: require('../../images/six.mp4') ,image: require('../../images/three.png')
+        // id: 1, title: 'The Brave Tiger ', link: require('../../images/six.mp4') ,image: require('../../images/three.png')
     },
     {
          id: 2, title: 'Radha and Magical Book', link: require('../../images/seven.mp4'),image: require('../../images/four.png')
