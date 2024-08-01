@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, Modal } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, Modal, Alert } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import axios from 'axios';
 
@@ -97,9 +97,10 @@ const Signup = ({ navigation }) => {
             setPassword('');
             setErrors({});
           } else {
-            setModalTitle("Registration Failed");
-            setModalSubtitle(res.data.message || "Something went wrong.");
-            setModalVisible(true);
+            // setModalTitle("Registration Failed");
+            // setModalSubtitle(res.data.message || "Something went wrong.");
+            Alert.alert('Please Correct Details!');
+                        setModalVisible(false);
             setTimeout(() => {
               setModalVisible(false);
             }, 2000);
@@ -218,7 +219,7 @@ const Signup = ({ navigation }) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Image
-              source={require('../images/cong.png')} // Update this path to your image
+              source={require('../images/cong.png')} 
               style={styles.modalImage}
             />
             <Text style={styles.modalTitle}>{modalTitle}</Text>

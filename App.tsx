@@ -222,7 +222,8 @@ import DrawerNavigator from './android/app/src/components/DrawerNavigator';
 import Personal from './android/app/src/components/Personal';
 // import Linkform from './android/app/src/component/Linkform';
 // import Screen3 from './android/app/src/component/Screen3';
-import Screen3 from './android/app/src/components/Screen3';
+// import Screen3 from './android/app/src/components/Screen3';
+import Rating from './android/app/src/components/Rating'
 // import Linkform from './android/app/src/component/Linkform';
 import Linkform from './android/app/src/components/Linkform';
 const Stack = createNativeStackNavigator();
@@ -235,7 +236,7 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Dashboard" component={DrawerNavigator} /> 
         <Stack.Screen name="Personal" component={Personal} /> 
-        <Stack.Screen name="Screen3" component={Screen3} />
+        <Stack.Screen name="Rating" component={Rating} />
         <Stack.Screen name="Linkform" component={Linkform} />
       </Stack.Navigator>
     </NavigationContainer>

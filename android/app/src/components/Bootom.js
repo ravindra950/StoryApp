@@ -8,6 +8,7 @@ import Dashboard from './Dashboard';
 import Dash from './Dash'
 // import {  } from 'react-native-rea;nimated/lib/typescript/Animated';
 const Bottom = createBottomTabNavigator();
+import Personal from './Personal';
 import Subscription from './Subscription';
 
 const Bootom = () => {
@@ -23,7 +24,7 @@ const Bootom = () => {
           <Image source={require("../images/pre.png")} style={{width:20,height:20}}/>
         )
       }}} />
-      <Bottom.Screen name="My Profile" component={Screen3} options={{headerShown:false, tabBarIcon:tabInfo=>{
+      <Bottom.Screen name="My Profile" component={Personal} options={{headerShown:false, tabBarIcon:tabInfo=>{
         return(
           <Image source={require("../images/user1.png")} style={{width:20,height:20,tintColor:tabInfo.focus?'skyblue':'golden'}}/>
 

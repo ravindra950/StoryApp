@@ -29,7 +29,7 @@ const Linkform = ({navigation}) => {
         <View style={styles.form}>
         <View style={styles.header}>
           <Image
-          source={require("../images/prf3.png")}
+          source={require("../images/user1.png")}
           style={styles.headerImage}
           alt='Logo'
           />
