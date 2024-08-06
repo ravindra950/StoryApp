@@ -6,7 +6,7 @@ import 'react-native-gesture-handler';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 // import Dashboard from './Dashboard';
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
 import Bootom from './Bootom';
 import DrawerFile from './DrawerFile';
 

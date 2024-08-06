@@ -375,29 +375,29 @@
 //     const [email, setEmail] = useState('');
 //     const [password, setPassword] = useState('');
 
-//     function handleSubmit() {
-//         if (!email || !password) {
-//             Alert.alert('Error', 'Please fill in both email and password fields.');
-//             return;
-//         }
+  //   function handleSubmit() {
+  //       if (!email || !password) {
+  //           Alert.alert('Error', 'Please fill in both email and password fields.');
+  //           return;
+  //       }
         
-//         const userData = { email, password };
+  //       const userData = { email, password };
 
-//         // axios.post("http://192.168.199.135:5001/login-user", userData)
-//         axios.post("http://192.168.115.135:5001/login-user", userData)
+  //       // axios.post("http://192.168.199.135:5001/login-user", userData)
+  //       axios.post("http://192.168.115.135:5001/login-user", userData)
 
-//             .then(res => {
-//                 if (res.data.status === "ok") {
-//                     Alert.alert('Login Successful!');
-//                     navigation.navigate("Dashboard");
-//                     setEmail('');
-//                     setPassword('');
-//                 } else {
-//                     Alert.alert('Incorrect email or password.');
-//                 }
-//             })
-//             .catch(e=>console.log(e));
-//     }
+  //           .then(res => {
+  //               if (res.data.status === "ok") {
+  //                   Alert.alert('Login Successful!');
+  //                   navigation.navigate("Dashboard");
+  //                   setEmail('');
+  //                   setPassword('');
+  //               } else {
+  //                   Alert.alert('Incorrect email or password.');
+  //               }
+  //           })
+  //           .catch(e=>console.log(e));
+  // }
 
 //     return (
 //         <View style={styles.container}>
@@ -637,26 +637,64 @@ export default function Login({ navigation }) {
       });
     }
   }
+  
+
+  
+  // function handleSubmit() {
+  //   const correctEmail = 'ravi12@gmail.com';
+  //   const correctPassword = 'ravi12';
+  
+  //   if (email && password) {
+  //     if (email === correctEmail && password === correctPassword) {
+  //       navigation.navigate("Dashboard");
+  //       setEmail('');
+  //       setPassword('');
+  //     } else {
+  //       Alert.alert('Incorrect email or password.');
+  //     }
+  //   } else {
+  //     Alert.alert('Please fill in both email and password fields.');
+  //   }
+  // }
+  
+  
 
   function handleSubmit() {
-    const correctEmail = 'ravi12@gmail.com';
-    const correctPassword = 'ravi12';
-  
-    if (email && password) {
-      if (email === correctEmail && password === correctPassword) {
-        navigation.navigate("Dashboard");
-        setEmail('');
-        setPassword('');
-      } else {
-        Alert.alert('Incorrect email or password.');
-      }
-    } else {
-      Alert.alert('Please fill in both email and password fields.');
-    }
-  }
-  
-  
+    validateEmail(email);
+    validatePassword(password);
 
+    // if (Object.keys(errors).length === 0) {
+    //   const userData = {
+    //     email,
+    //     password,
+    //   };
+      if (!email || !password) {
+          // Alert.alert('Error', 'Please fill in both email and password fields.');
+          return;
+      }
+      
+      const userData = { email, password };
+
+    //   axios.post("http://192.168.10.4:5001/login-user", userData)
+        //  axios.post("http://192.168.115.135:5001/login-user", userData)
+        axios.post("http://192.168.172.135:5001/login-user", userData)
+
+          .then(res => {
+              if (res.data.status === "ok") {
+                  // Alert.alert('Login Successful!');
+                  // navigation.navigate("Dashboard");
+                  navigation.navigate("Dashboard");
+
+                  setEmail('');
+                  setPassword('');
+              } else {
+                  Alert.alert('Incorrect email or password.');
+              }
+          })
+          .catch(e=>console.log(e));
+  }
+
+    
     
     
   return (

@@ -1,12 +1,13 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Modal, Image ,Button} from 'react-native';
 import YouTubeIframe from 'react-native-youtube-iframe'; 
 import { getAnimal } from '../api/animal.js';
 import { getKids } from '../api/kids.js';
 import { getStories } from '../api/allapi';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const extractVideoId = (url) => {
   if (!url) return null;
@@ -99,6 +100,15 @@ const Dash = ({ navigation }) => {
 
 
 
+  const shouldNavigateToDashboard = true; 
+
+  const handleBack = () => {
+    if (shouldNavigateToDashboard) {
+      navigation.navigate('Dashboard'); 
+    } else {
+      navigation.navigate('Login'); 
+    }
+  };
   const renderStoryItem = ({ item }) => (
     <TouchableOpacity style={styles.storyItemContainer} onPress={() => handleImagePress(item)}>
       <View style={styles.storyItem}>
@@ -145,7 +155,7 @@ const Dash = ({ navigation }) => {
           <Icon name="paw" size={14} color="white" />
           <Text style={styles.sectionButtonText}>Animal</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionButtontt}>
+        <TouchableOpacity style={styles.sectionButtontt} onPress={() => setSelectedSection('all')}>
           <Icon name="star" size={14} color="white" />
           <Text style={styles.sectionButtonText}>Top Rated</Text>
         </TouchableOpacity>
@@ -186,19 +196,43 @@ const Dash = ({ navigation }) => {
       >
         <View style={styles.shareModalContainer}>
           <TouchableOpacity style={styles.closeButton} onPress={closeShareModal}>
-            <Icon name="close" size={30} color="black" style={styles.closeButtonText} />
+            <Icon name="close" size={30} color="white" style={styles.closeButtonText} />
           </TouchableOpacity>
           <View style={styles.shareOptionsContainer}>
-            <TouchableOpacity style={styles.shareOption} onPress={() => console.log('Share to Instagram')}>
-              <Icon name="instagram" size={30} color="black" />
-              <Text style={styles.shareOptionText}>Instagram</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.shareOption} onPress={() => console.log('Share to WhatsApp')}>
-              <Icon name="whatsapp" size={30} color="black" />
-              <Text style={styles.shareOptionText}>WhatsApp</Text>
-            </TouchableOpacity>
+        
+            <Image
+              source={require('../images/main.png')} 
+              style={styles.modalImage1}
+            />
+            <Text style={styles.modalTitle1}>Unlock the Power of Sharing</Text>
+         
+
+<View style={styles.row1}>
+        <Image source={require('../images/whicon.png')} style={styles.image1} />
+        <Image source={require('../images/inicon.png')} style={styles.image1} />
+      </View>
+            <Text style={styles.modalSubtitle1}>Fresh Features Launching Soon..</Text>
+            <TouchableOpacity 
+            // onPress={handlePress}
+            >
+          <Text style={styles.link}                   
+          //  onPress={() => navigation.goBack('Dashboard')}>
+          // onPress={() => navigation.navigate('Dashboard')}>
+          // onPress={handleBack}>
+          // onPress={() => navigation.goBack('Dashboard')}
+          onPress={() => {
+            closeShareModal();
+            navigation.navigate('Dashboard'); 
+          }}
+          >
+
+          Click Here To Go Back</Text>
+
+        </TouchableOpacity>
+
           </View>
-        </View>
+          </View>
+        {/* </View> */}
       </Modal>
     </View>
   );
@@ -351,10 +385,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   closeButton: {
+    // position: 'absolute',
+    // top: 20,
+    // right: 20,
     position: 'absolute',
-    top: 20,
-    right: 20,
-    color:'white'
+    top: 10,
+    right: 10,
+    // color:'white'
   },
   closeButtonText: {
     fontSize: 30,
@@ -369,6 +406,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor:'#d4e10e'
   },
   shareOptionsContainer: {
     width: '80%',
@@ -383,6 +421,61 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 18,
   },
+
+  modalContent: {
+    width: '90%',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 20,
+    alignItems: 'center',
+  },
+  modalImage1: {
+    width: '100%',
+    height: 300,
+    // width: 200,
+    // height: 200,
+    // marginBottom: 20,
+    marginTop:-100,
+  },
+  modalTitle1: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    // marginBottom: 10,
+    color: '#880015',
+  },
+  modalSubtitle1: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#880015',
+    fontWeight: 'bold',
+
+  },
+  row1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop:20,
+    marginBottom:20,
+  },
+  image1: {
+    width: 50,
+    height: 50,
+    marginHorizontal: 10,
+  },
+
+  link: {
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+    position: 'center',
+
+    textDecorationLine: 'underline',
+    marginTop:40,
+    marginBottom:15,
+    
+  },
+  
+  
+  
 });
 
 export default Dash;

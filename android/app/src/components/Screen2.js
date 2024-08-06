@@ -4,11 +4,18 @@ import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Dash from './Dash.js'
+import { useNavigation } from '@react-navigation/native';
+
 const Screen2 = ({ navigation }) => {
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   const handleSelect = (plan) => {
     setSelectedPlan(plan);
+  };
+  const handleSubmit = () => {
+
+    navigation.navigate('Dashboard');
   };
 
   return (
@@ -109,8 +116,24 @@ const Screen2 = ({ navigation }) => {
       
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.customButton}>
-          <Text style={styles.customButtonText} onPress={() => navigation.navigate('Login')}>Select this Package</Text>
+        <TouchableOpacity style={styles.customButton} 
+        // onPress={handleSubmit}
+        onPress={() =>         
+        //       navigation.navigate('Dashboard')
+
+        navigation.goBack('Dashboard')
+        }>
+          <Text style={styles.customButtonText}
+          // onPress={() => 
+            
+          //   navigation.navigate('Dashboa rd')
+
+          //   }
+            // navigation.navigate('Dash')}
+            // onPress={handleSubmit}
+            // onPress={() => navigation.navigate('Dashboard')} 
+
+           >Select this Package</Text>
         </TouchableOpacity>
       </View>
     </View>

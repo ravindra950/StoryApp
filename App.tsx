@@ -206,6 +206,7 @@
 import * as React from 'react';
 import { Link, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // import Signup from './android/app/src/component/Signup';
 import Signup from './android/app/src/components/SignupScreen';
@@ -213,7 +214,8 @@ import Signup from './android/app/src/components/SignupScreen';
 // import Login from './android/app/src/component/Login';
 import Login from './android/app/src/components/LoginScreen';
 // import Dashboard from './android/app/src/component/Dashboard';
-import Dashboard from './android/app/src/components/Dashboard';
+import Dashboard from './android/app/src/components/Dash';
+// import Dashboard from './android/app/src/components/Dashboard';
 // import Dashnav from './android/app/src/component/Dashnav';
 // import HomeScreen from './android/app/src/component/HomeScreen';
 // import DrawerNavigator from './android/app/src/component/DrawerNavigator';
@@ -227,8 +229,21 @@ import Rating from './android/app/src/components/Rating'
 // import Linkform from './android/app/src/component/Linkform';
 import Linkform from './android/app/src/components/Linkform';
 import Dash from './android/app/src/components/Dash'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Screen2 from './android/app/src/components/Screen2'
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
+
+// function HomeTabs() {
+//   return (
+//     <Tab.Navigator>
+      
+//       <Stack.Screen  component={Dash} />
+       
+//     </Tab.Navigator>
+//   );
+// }
 function App() {
   return (
     <NavigationContainer>
@@ -236,6 +251,11 @@ function App() {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Dashboard" component={DrawerNavigator} /> 
+        {/* <Stack.Screen name="Dashboard" component={Dash} />  */}
+        {/* <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }}
+        /> */}
+         <Stack.Screen name="Screen2" component={Screen2} options={{ headerShown: false }} 
+        />
         <Stack.Screen name="Personal" component={Personal} /> 
         <Stack.Screen name="Rating" component={Rating} />
         <Stack.Screen name="Linkform" component={Linkform} />

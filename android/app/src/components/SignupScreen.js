@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Image, Modal, Alert } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/MaterialIcons'; 
+
 
 const Signup = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -81,8 +83,8 @@ const Signup = ({ navigation }) => {
       };
 
     //   axios.post("http://192.168.115.135:5001/register", userData)
-    axios.post("http://192.168.164.135:5001/register", userData)
-
+    axios.post("http://192.168.172.135:5001/register", userData)
+    
         .then(res => {
           if (res.data.status === "ok") {
             setModalTitle("You've successfully signed up.");
@@ -123,7 +125,9 @@ const Signup = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <Image
-          source={require('../images/logor.png')}
+          // source={require('../images/logor.png')}
+          source={require('../images/main.png')}
+
           style={styles.logo}
         />
       </View>
@@ -133,6 +137,8 @@ const Signup = ({ navigation }) => {
           <Text style={styles.subtitle}>Signup with StoryHub!</Text>
 
           <View style={styles.inputContainer}>
+          <Icon name="person" size={30} color="#000" style={styles.icon} />
+
             <TextInput
               style={styles.input}
               placeholder="Full Name"
@@ -154,6 +160,8 @@ const Signup = ({ navigation }) => {
           )}
 
           <View style={styles.inputContainer}>
+          <Icon name="email" size={25} color="#000" style={styles.icon} />
+
             <TextInput
               style={styles.input}
               placeholder="Email Address"
@@ -175,6 +183,8 @@ const Signup = ({ navigation }) => {
           )}
 
           <View style={styles.inputContainer}>
+          <Icon name="lock" size={25} color="#000" style={styles.icon}/>                 
+
             <TextInput
               style={styles.input}
               placeholder="Choose Password"
@@ -279,8 +289,10 @@ const styles = StyleSheet.create({
        marginTop: -17,  
       },
       logo: {
-        width: 100,
-        height: 100,
+        // width: 100,
+        // height: 100,
+        width: 150,
+        height: 150,
         resizeMode: 'contain',
       },
       subtitle: {
