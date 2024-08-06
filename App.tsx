@@ -209,7 +209,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // import Signup from './android/app/src/component/Signup';
-import Signup from './android/app/src/components/SignupScreen';
+// import Signup from './android/app/src/components/SignupScreen';
+import Signup from './android/app/src/components/SignupScreen'
 // import Signup from './android/app/src/components/Signup.js'
 // import Login from './android/app/src/component/Login';
 import Login from './android/app/src/components/LoginScreen';
@@ -231,6 +232,7 @@ import Linkform from './android/app/src/components/Linkform';
 import Dash from './android/app/src/components/Dash'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Screen2 from './android/app/src/components/Screen2'
+import Bootom from './android/app/src/components/Bootom'
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -260,6 +262,7 @@ function App() {
         <Stack.Screen name="Rating" component={Rating} />
         <Stack.Screen name="Linkform" component={Linkform} />
         <Stack.Screen name="Dash" component={Dash} />
+        <Stack.Screen name="Bootom" component={Bootom} />
 
       </Stack.Navigator>
     </NavigationContainer>

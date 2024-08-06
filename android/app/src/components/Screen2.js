@@ -15,7 +15,7 @@ const Screen2 = ({ navigation }) => {
   };
   const handleSubmit = () => {
 
-    navigation.navigate('Dashboard');
+    navigation.navigate('Bootom');
   };
 
   return (
@@ -119,10 +119,11 @@ const Screen2 = ({ navigation }) => {
         <TouchableOpacity style={styles.customButton} 
         // onPress={handleSubmit}
         onPress={() =>         
-        //       navigation.navigate('Dashboard')
+              // navigation.navigate('Bootom')
 
         navigation.goBack('Dashboard')
-        }>
+        }
+        >
           <Text style={styles.customButtonText}
           // onPress={() => 
             
