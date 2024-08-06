@@ -81,7 +81,7 @@ const Signup = ({ navigation }) => {
       };
 
     //   axios.post("http://192.168.115.135:5001/register", userData)
-    axios.post("http://192.168.115.135:5001/register", userData)
+    axios.post("http://192.168.164.135:5001/register", userData)
 
         .then(res => {
           if (res.data.status === "ok") {
@@ -99,7 +99,7 @@ const Signup = ({ navigation }) => {
           } else {
             // setModalTitle("Registration Failed");
             // setModalSubtitle(res.data.message || "Something went wrong.");
-            Alert.alert('Please Correct Details!');
+            Alert.alert('Please Enter Correct Details!');
                         setModalVisible(false);
             setTimeout(() => {
               setModalVisible(false);
@@ -107,9 +107,11 @@ const Signup = ({ navigation }) => {
           }
         })
         .catch(e => {
-          setModalTitle("Error");
-          setModalSubtitle("An error occurred. Please try again.");
-          setModalVisible(true);
+          // setModalTitle("Error");
+          // setModalSubtitle("An error occurred. Please try again.");
+          Alert.alert('Please Enter Correct Details!');
+
+          setModalVisible(false);
           setTimeout(() => {
             setModalVisible(false);
           }, 2000);
@@ -253,19 +255,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius:20,
+        height:'100%',
+        // width:'100%'
+
       },
       box: {
         width: '110%',
         // height:'100%',
         backgroundColor: 'white',
-        borderRadius: 40,
+        // borderRadius: 40,
         paddingVertical: 25,
         paddingHorizontal: 20,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
-        elevation: 5,
+        // shadowColor: '#000',
+        // shadowOffset: { width: 0, height: 2 },
+        // shadowOpacity: 0.2,
+        // shadowRadius: 4,
+        // elevation: 5,
+        padding:8,
+      borderTopLeftRadius:50,
+      borderTopRightRadius:50,
+      border:1,
+      height:'110%',
+       marginTop: -17,  
       },
       logo: {
         width: 100,
@@ -377,7 +388,10 @@ const styles = StyleSheet.create({
         fontSize:14,
         fontWeight:"800",
         color:'rgb(102, 153, 255)',
-        height:20,
+        // height:20,
+        marginBottom:15,
+        height:'30%',
+
       },
     
     

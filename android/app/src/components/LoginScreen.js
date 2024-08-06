@@ -638,39 +638,24 @@ export default function Login({ navigation }) {
     }
   }
 
-
   function handleSubmit() {
-    validateEmail(email);
-    validatePassword(password);
-
-    // if (Object.keys(errors).length === 0) {
-    //   const userData = {
-    //     email,
-    //     password,
-    //   };
-      if (!email || !password) {
-          // Alert.alert('Error', 'Please fill in both email and password fields.');
-          return;
+    const correctEmail = 'ravi12@gmail.com';
+    const correctPassword = 'ravi12';
+  
+    if (email && password) {
+      if (email === correctEmail && password === correctPassword) {
+        navigation.navigate("Dashboard");
+        setEmail('');
+        setPassword('');
+      } else {
+        Alert.alert('Incorrect email or password.');
       }
-      
-      const userData = { email, password };
-
-    //   axios.post("http://192.168.10.4:5001/login-user", userData)
-        //  axios.post("http://192.168.115.135:5001/login-user", userData)
-        axios.post("http://192.168.164.135:5001/login-user", userData)
-
-          .then(res => {
-              if (res.data.status === "ok") {
-                  // Alert.alert('Login Successful!');
-                  navigation.navigate("Dashboard");
-                  setEmail('');
-                  setPassword('');
-              } else {
-                  // Alert.alert('Incorrect email or password.');
-              }
-          })
-          .catch(e=>console.log(e));
+    } else {
+      Alert.alert('Please fill in both email and password fields.');
+    }
   }
+  
+  
 
     
     
@@ -740,7 +725,12 @@ export default function Login({ navigation }) {
 
                   <View style={styles.formAction}>
                  <Text style={styles.footer}>Forgot Password?</Text>
-                   <TouchableOpacity onPress={handleSubmit}>
+                   {/* <TouchableOpacity onPress={handleSubmit}> */}
+                   <TouchableOpacity
+                    onPress={handleSubmit}
+                    // onPress={() => navigation.navigate('Dashboard')}
+                    >
+
                 <View style={styles.botton1}>
                    <Text style={styles.botton1Text}>Login</Text>
                 </View>
@@ -885,7 +875,7 @@ const styles = StyleSheet.create ({
       borderTopLeftRadius:50,
       borderTopRightRadius:50,
       border:1,
-     
+    //  height:'100%',
        marginTop: -17,              
       //  paddingTop: 100, 
       

@@ -15,7 +15,7 @@ const extractVideoId = (url) => {
   return match ? match[1] : null;
 };
 
-const Dash = () => {
+const Dash = ({ navigation }) => {
   const [stories, setStories] = useState([]);
   const [kidsstories, setKidsstories] = useState([]);
   const [animalstories, setAnimalstories] = useState([]);

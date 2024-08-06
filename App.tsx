@@ -226,6 +226,7 @@ import Personal from './android/app/src/components/Personal';
 import Rating from './android/app/src/components/Rating'
 // import Linkform from './android/app/src/component/Linkform';
 import Linkform from './android/app/src/components/Linkform';
+import Dash from './android/app/src/components/Dash'
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -238,6 +239,8 @@ function App() {
         <Stack.Screen name="Personal" component={Personal} /> 
         <Stack.Screen name="Rating" component={Rating} />
         <Stack.Screen name="Linkform" component={Linkform} />
+        <Stack.Screen name="Dash" component={Dash} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
