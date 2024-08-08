@@ -122,6 +122,8 @@ const Screen2 = ({ navigation }) => {
               // navigation.navigate('Bootom')
 
         navigation.goBack('Dashboard')
+        // navigation.goBack('Screen2')
+
         }
         >
           <Text style={styles.customButtonText}

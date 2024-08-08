@@ -1,3 +1,5 @@
+
+
 // import React,{useState} from 'react';
 // import { View, Text ,style, StyleSheet,Image,SafeAreaView, TouchableOpacity } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
@@ -12,9 +14,7 @@
 // const starImgCorner='https://th.bing.com/th/id/OIP.wU9bj7e_oMkWCcZnvh6zyAAAAA?rs=1&pid=ImgDetMain'
 
 
-// // const CustomRatingBar =({navigation})=>{
-//     const CustomRatingBar =()=>{
-
+// const CustomRatingBar =({navigation})=>{
 //     return(
 //         <View style={styles.customRatingBarStyle}>
 // {
@@ -51,7 +51,7 @@
     
 //         <View style={styles.circle}>
 //      <Image
-//            source={require('../images/logo.png')}
+//            source={require('../images/star.png')}
 //            style={styles.images}
 //            alt="logo"
 //            />
@@ -191,6 +191,7 @@
     
 // })
 
+
 import React,{useState} from 'react';
 import { View, Text ,style, StyleSheet,Image,SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -256,12 +257,26 @@ const CustomRatingBar =({navigation})=>{
         </Text>
         <TouchableOpacity
            activeOpacity={0.7}
+           
            style={styles.buttonStyle}
-           onPress={()=>navigation.navigate('Login')}
+        //    onPress={()=>navigation.navigate('Login')}
+        onPress={ 
+             ()=>navigation.goBack('Dashboard')
+            
+        }
+        
         >
-            <Text style={styles.textStyle1}> Submit</Text>
+            <Text style={styles.textStyle1}
+            onPress={() =>         
+                // navigation.navigate('Bootom')
+    
+          navigation.goBack('goBack')
+          // navigation.goBack('Screen2')
+    
+          }
+            > Submit</Text>
         </TouchableOpacity>
-        <Text style={styles.textStyle3}>No Thanks!</Text>
+        {/* <Text style={styles.textStyle3}>No Thanks!</Text> */}
         </View> 
         </View> 
     </SafeAreaView>
@@ -285,7 +300,7 @@ const styles = StyleSheet.create({
     header:{
         borderBottomLeftRadius: 5,  
         borderBottomRightRadius:5,
-        marginTop: -100,              
+        marginTop: -250,              
         paddingTop: 100,
      
     },
@@ -295,7 +310,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         // marginTop:,
-        marginLeft:3,
+        marginLeft:2,
         borderRadius:250,
         
     },
@@ -303,13 +318,13 @@ const styles = StyleSheet.create({
         
          backgroundColor:"white",
          padding:8,
-         marginTop: 70,              
-        
+         marginTop: 400,              
+        height:600,
         borderCurve:'50',
       
         borderTopLeftRadius: 50, 
         borderTopRightRadius: 50, 
-    
+          
       
  
     },
@@ -329,7 +344,7 @@ const styles = StyleSheet.create({
     textStyle:{
         
         textAlign:'center',
-        fontSize:20,
+        fontSize:18,
         marginTop:25,
         fontWeight:'700',
     },
@@ -347,35 +362,36 @@ const styles = StyleSheet.create({
         marginTop:13,
         height:35,
         width:210,
-       marginLeft:30,
-       marginRight:20,
+       marginLeft:65,
+       marginRight:30,
+       marginBottom:50,
     },
     textStyle1:{
         color:'black',
         fontWeight:'700',
-        fontSize:17,
+        fontSize:18,
     },
     textStyle2:{
         textAlign:'center',
-        fontSize:20,
+        fontSize:18,
     marginBottom:10,
         fontWeight:'700',
     },
     textStyle3:{
         textAlign:'center',
-        fontSize:15,
+        fontSize:16,
         marginTop:9,
         fontWeight:'700',
         marginBottom:50,
         marginLeft:25,
     },
     circle:{
-        height:100,
-        width:100,
+        height:95,
+        width:95,
         borderRadius:250,
         borderWidth:1,
         borderColor:"pink",
-        marginLeft:85,
+        marginLeft:125,
         marginTop:-45,
         
     },
