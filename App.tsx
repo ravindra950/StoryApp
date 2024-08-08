@@ -210,7 +210,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // import Signup from './android/app/src/component/Signup';
 // import Signup from './android/app/src/components/SignupScreen';
-import Signup from './android/app/src/components/SignupScreen'
+// import Signup from './android/app/src/components/SignupScreen'
 // import Signup from './android/app/src/components/Signup.js'
 // import Login from './android/app/src/component/Login';
 import Login from './android/app/src/components/LoginScreen';
@@ -250,8 +250,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Login" component={Login} />
+        {/* <Stack.Screen name="Signup" component={Signup} /> */}
+        {/* <Stack.Screen name="Login" component={Login} /> */}
         <Stack.Screen name="Dashboard" component={DrawerNavigator} /> 
         {/* <Stack.Screen name="Dashboard" component={Dash} />  */}
         {/* <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }}
