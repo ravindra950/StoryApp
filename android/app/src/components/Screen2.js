@@ -478,3 +478,109 @@ const styles = StyleSheet.create({
 });
 
 export default Screen2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<View style={styles.buttonContainer}>
+{/* <TouchableOpacity style={styles.sectionButton} onPress={() => setSelectedSection('all')}>
+  <Icon name="globe" size={14} color="white" />
+  <Text style={styles.sectionButtonText}>All</Text>
+</TouchableOpacity> */}
+<TouchableOpacity
+  style={[
+    styles.sectionButton,
+    selectedSection === 'all' && { backgroundColor: 'black' },
+  ]}
+  // onPress={() => handleSectionPress('all')}
+>
+
+
+  {/* <Icon name="globe" size={14} color="white" /> */}
+  <Text style={styles.sectionButtonText}>Favourite</Text>
+</TouchableOpacity>
+{/* <TouchableOpacity style={styles.sectionButtono} onPress={() => setSelectedSection('kids')}>
+  <Icon name="child" size={14} color="white" />
+  <Text style={styles.sectionButtonText}>Kids</Text>
+</TouchableOpacity> */}
+
+
+<TouchableOpacity
+  style={[
+    styles.sectionButtono,
+    selectedSection === 'kids' && { backgroundColor: 'black' },
+  ]}
+  // onPress={() => handleSectionPress('kids')}
+>
+
+  
+  {/* <Icon name="child" size={14} color="white" /> */}
+  <Text style={styles.sectionButtonText}>Watched</Text>
+</TouchableOpacity>
+{/* <TouchableOpacity style={styles.sectionButtont} onPress={() => setSelectedSection('animal')}>
+  <Icon name="paw" size={14} color="white" />
+  <Text style={styles.sectionButtonText}>Animal</Text>
+</TouchableOpacity> */}
+
+
+
+<TouchableOpacity
+  style={[
+    styles.sectionButtont,
+    selectedSection === 'animal' && { backgroundColor: 'black' },
+  ]}
+  // onPress={() => handleSectionPress('animal')}
+>
+
+  
+  {/* <Icon name="paw" size={14} color="white" /> */}
+  <Text style={styles.sectionButtonText}>Watch later</Text>
+</TouchableOpacity>
+
+{/* <TouchableOpacity style={styles.sectionButtontt} onPress={() => setSelectedSection('all')}>
+  <Icon name="star" size={14} color="white" />
+  <Text style={styles.sectionButtonText}>Top Rated</Text>
+</TouchableOpacity> */}
+
+
+<TouchableOpacity
+  style={[
+    styles.sectionButtontt,
+    selectedSection === 'top' && { backgroundColor: 'black' },
+  ]}
+  // onPress={() => handleSectionPress('top')}
+>
+
+  
+  {/* <Icon name="star" size={14} color="white" /> */}
+  <Text style={styles.sectionButtonText}>Newly Added</Text>
+</TouchableOpacity>
+
+<TouchableOpacity
+  style={[
+    styles.sectionButtontt,
+    selectedSection === 'top' && { backgroundColor: 'black' },
+  ]}
+  // onPress={() => handleSectionPress('top')}
+>
+
+  
+  {/* <Icon name="star" size={14} color="white" /> */}
+  <Text style={styles.sectionButtonText}>Duration</Text>
+</TouchableOpacity>
+
+
+
+</View>

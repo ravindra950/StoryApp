@@ -10,9 +10,9 @@
     <option name="CLEAR_APP_STORAGE" value="false" />
     <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
     <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-    <option name="MODE" value="do_nothing" />
+    <option name="MODE" value="specific_activity" />
     <option name="CLEAR_LOGCAT" value="false" />
-    <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+    <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
     <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
     <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
     <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />

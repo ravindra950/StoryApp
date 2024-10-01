@@ -1,24 +1,40 @@
 
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+ import { createStackNavigator } from '@react-navigation/stack';
+// import Signup from './src/components/Signup';
+// import Login from './src/components/Login';
+// import HomeScreen from './src/components/Home';
+// const Stack = createStackNavigator();
+import Dashboard from './android/app/src/components/Dashboard';
+const App = () => {
+  return (
+    <Dashboard/>
+
+
+  );
+};
+
+export default App;
+
+
 // import React from 'react';
 // // import { NavigationContainer } from '@react-navigation/native';
 // // import { createStackNavigator } from '@react-navigation/stack';
-// import Signup from './src/components/Signup';
-// import Login from './src/components/Login';
+// // import Signup from './src/components/Signup';
+// // import Login from './src/components/Login';
 // // import HomeScreen from './src/components/Home';
-// // import Dashboard from './src/components/Dashboard';
-// // const Stack = createStackNavigator();
+// // import Dashboard from './android/app/src/components/Dash';
+// import Dashboard from './android/app/src/components/Dashboard'
+// // import Ravi from './android/app/src/components/Ravi'
+// // // const Stack = createStackNavigator();
+// // import RaviOne from './android/app/src/components/Ravione'
+// import Dash from './android/app/src/components/Dash'
 
 // const App = () => {
 //   return (
-//     // <NavigationContainer>
-//     //   <Stack.Navigator initialRouteName="Home">
-//     //     <Stack.Screen name="Home" component={HomeScreen} />
-//     //     <Stack.Screen name="Signup" component={Signup} />
-//     //   </Stack.Navigator>
-//     // </NavigationContainer>
-//     <Login/>
-
-
+//   //  <RaviOne/>
+//   <Dashboard/>
 //   );
 // };
 
@@ -203,70 +219,71 @@
 
 
 
-import * as React from 'react';
-import { Link, NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import * as React from 'react';
+// import { Link, NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-// import Signup from './android/app/src/component/Signup';
-// import Signup from './android/app/src/components/SignupScreen';
-// import Signup from './android/app/src/components/SignupScreen'
-// import Signup from './android/app/src/components/Signup.js'
-// import Login from './android/app/src/component/Login';
-import Login from './android/app/src/components/LoginScreen';
-// import Dashboard from './android/app/src/component/Dashboard';
-import Dashboard from './android/app/src/components/Dash';
-// import Dashboard from './android/app/src/components/Dashboard';
-// import Dashnav from './android/app/src/component/Dashnav';
-// import HomeScreen from './android/app/src/component/HomeScreen';
-// import DrawerNavigator from './android/app/src/component/DrawerNavigator';
-import DrawerNavigator from './android/app/src/components/DrawerNavigator';
-//  import Personal from './android/app/src/component/Personal';
-import Personal from './android/app/src/components/Personal';
-// import Linkform from './android/app/src/component/Linkform';
-// import Screen3 from './android/app/src/component/Screen3';
-// import Screen3 from './android/app/src/components/Screen3';
-import Rating from './android/app/src/components/Rating'
-// import Linkform from './android/app/src/component/Linkform';
-import Linkform from './android/app/src/components/Linkform';
-import Dash from './android/app/src/components/Dash'
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Screen2 from './android/app/src/components/Screen2'
-import Bootom from './android/app/src/components/Bootom'
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+// // import Signup from './android/app/src/component/Signup';
+// // import Signup from './android/app/src/components/SignupScreen';
+// // import Signup from './android/app/src/components/SignupScreen'
+// // import Signup from './android/app/src/components/Signup.js'
+// // import Login from './android/app/src/component/Login';
+// // import Login from './android/app/src/components/LoginScreen';
+// // import Dashboard from './android/app/src/component/Dashboard';
+// import Dashboard from './android/app/src/components/Dash';
+// // import Dashboard from './android/app/src/components/Dashboard';
+// // import Dashnav from './android/app/src/component/Dashnav';
+// // import HomeScreen from './android/app/src/component/HomeScreen';
+// // import DrawerNavigator from './android/app/src/component/DrawerNavigator';
+// import DrawerNavigator from './android/app/src/components/DrawerNavigator';
+// //  import Personal from './android/app/src/component/Personal';
+// import Personal from './android/app/src/components/Personal';
+// // import Linkform from './android/app/src/component/Linkform';
+// // import Screen3 from './android/app/src/component/Screen3';
+// // import Screen3 from './android/app/src/components/Screen3';
+// import Rating from './android/app/src/components/Rating'
+// // import Linkform from './android/app/src/component/Linkform';
+// // import Linkform from './android/app/src/components/Linkform';
+// import Dash from './android/app/src/components/Dash'
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import Screen2 from './android/app/src/components/Screen2'
+// import Bootom from './android/app/src/components/Bootom'
+// const Stack = createNativeStackNavigator();
+// const Tab = createBottomTabNavigator();
 
 
-// function HomeTabs() {
-//   return (
-//     <Tab.Navigator>
+// // function HomeTabs() {
+// //   return (
+// //     <Tab.Navigator>
       
-//       <Stack.Screen  component={Dash} />
+// //       <Stack.Screen  component={Dash} />
        
-//     </Tab.Navigator>
+// //     </Tab.Navigator>
+// //   );
+// // }
+// function App() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator screenOptions={{headerShown:false}}>
+//         {/* <Stack.Screen name="Signup" component={Signup} /> */}
+//         {/* <Stack.Screen name="Login" component={Login} /> */}
+//         <Stack.Screen name="Dashboard" component={DrawerNavigator} /> 
+//         {/* <Stack.Screen name="Dashboard" component={Dash} />  */}
+//         {/* <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }}
+//         /> */}
+//          <Stack.Screen name="Screen2" component={Screen2} options={{ headerShown: false }} 
+//         />
+//         <Stack.Screen name="Personal" component={Personal} /> 
+//         <Stack.Screen name="Rating" component={Rating} />
+//         {/* <Stack.Screen name="Linkform" component={Linkform} /> */}
+//         <Stack.Screen name="Dash" component={Dash} />
+//         <Stack.Screen name="Bootom" component={Bootom} />
+
+//       </Stack.Navigator>
+//     </NavigationContainer>
 //   );
 // }
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-        {/* <Stack.Screen name="Signup" component={Signup} /> */}
-        {/* <Stack.Screen name="Login" component={Login} /> */}
-        <Stack.Screen name="Dashboard" component={DrawerNavigator} /> 
-        {/* <Stack.Screen name="Dashboard" component={Dash} />  */}
-        {/* <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }}
-        /> */}
-         <Stack.Screen name="Screen2" component={Screen2} options={{ headerShown: false }} 
-        />
-        <Stack.Screen name="Personal" component={Personal} /> 
-        <Stack.Screen name="Rating" component={Rating} />
-        <Stack.Screen name="Linkform" component={Linkform} />
-        <Stack.Screen name="Dash" component={Dash} />
-        <Stack.Screen name="Bootom" component={Bootom} />
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+// export default App;
 
-export default App;
